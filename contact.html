@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AURORa - Contact</title>
+<style>
+body { margin:0; font-family:"Times New Roman", serif; background:linear-gradient(to bottom,#fdf6e3,#fcefe8); color:#3b3b3b; }
+header { background:linear-gradient(to right,#f7e7ce,#fdf6e3,#f7e7ce); color:#b76e79; text-align:center; padding:25px 20px 10px; }
+header h1 { font-size:42px; margin:0; font-weight:bold; letter-spacing:3px; }
+nav { margin-top:15px; border-top:1px solid #d8a7b1; border-bottom:1px solid #d8a7b1; padding:12px 0; }
+nav ul { list-style:none; margin:0; padding:0; display:flex; justify-content:center; gap:35px; }
+nav ul li a { text-decoration:none; font-size:18px; color:#b76e79; transition: color 0.3s ease; }
+nav ul li a:hover { color:#8c5a63; }
+main { padding:60px 20px 80px; text-align:center; }
+form { max-width:400px; margin:0 auto; text-align:left; }
+form input, form textarea { width:100%; padding:8px; margin:5px 0 15px 0; border-radius:5px; border:1px solid #ccc; }
+form button { background:#b76e79; color:#fff; padding:10px 20px; border:none; border-radius:5px; cursor:pointer; }
+form button:hover { background:#8c5a63; }
+footer { background:linear-gradient(to right,#f7e7ce,#fdf6e3,#f7e7ce); color:#b76e79; padding:15px; text-align:center; font-size:15px; position:fixed; width:100%; bottom:0; }
+</style>
+</head>
+<body>
+
+<header>
+<h1>Aurora.</h1>
+<nav>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="women.html">Women</a></li>
+    <li><a href="kids.html">Children</a></li>
+    <li><a href="men.html">Men</a></li>
+    <li><a href="travel.html">Travel Mode</a></li>
+  </ul>
+</nav>
+</header>
+<main>
+<h2>Contact Us</h2>
+<form id="contact-form">
+<label>Email:</label><br>
+<input type="email" name="email" required value="smiledgracely@gmail.com"><br>
+<label>Phone:</label><br>
+<input type="text" name="phone" required value="03047788049"><br>
+<button type="submit">Submit</button>
+</form>
+</main>
+
+<footer>&copy; 2025 Aurora. All rights reserved.</footer>
+
+<script>
+const form = document.getElementById('contact-form');
+form.addEventListener('submit', function(e){
+  e.preventDefault();
+  const email = form.email.value;
+  const phone = form.phone.value;
+  const phonePattern = /^\d{10,12}$/;
+  if(!email.includes('@')) { alert('Enter valid email'); return; }
+  if(!phonePattern.test(phone)) { alert('Enter valid phone'); return; }
+  alert('Form submitted successfully!');
+  form.reset();
+});
+</script>
+
+</body>
+</html>

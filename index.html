@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AURORa - Home</title>
+  <style>
+    body { margin:0; font-family:"Times New Roman", serif; background:linear-gradient(to bottom,#fdf6e3,#fcefe8); color:#3b3b3b; }
+    header { background:linear-gradient(to right,#f7e7ce,#fdf6e3,#f7e7ce); color:#b76e79; text-align:center; padding:25px 20px 10px; }
+    header h1 { font-size:42px; margin:0; font-weight:bold; letter-spacing:3px; }
+    nav { margin-top:15px; border-top:1px solid #d8a7b1; border-bottom:1px solid #d8a7b1; padding:12px 0; }
+    nav ul { list-style:none; margin:0; padding:0; display:flex; justify-content:center; gap:35px; }
+    nav ul li a { text-decoration:none; font-size:18px; color:#b76e79; transition: color 0.3s ease; }
+    nav ul li a:hover { color:#8c5a63; }
+    main { padding:40px 20px 80px; text-align:center; }
+    h2 { color:#b76e79; margin-bottom:30px; }
+    .products { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:30px; max-width:1000px; margin:0 auto; }
+    .product { background:#fff; border:1px solid #e6d3c9; border-radius:12px; padding:15px; box-shadow:0 4px 8px rgba(183,110,121,0.15); }
+    .product img { max-width:100%; border-radius:10px; cursor:pointer; }
+    .details { margin-top:12px; font-size:15px; color:#4a4a4a; line-height:1.4; }
+    .details strong { color:#b76e79; }
+    footer { background:linear-gradient(to right,#f7e7ce,#fdf6e3,#f7e7ce); color:#b76e79; padding:15px; text-align:center; font-size:15px; position:fixed; width:100%; bottom:0; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Aurora.</h1>
+  <nav>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="women.html">Women</a></li>
+    <li><a href="kids.html">Children</a></li>
+    <li><a href="men.html">Men</a></li>
+    <li><a href="travel.html">Travel Mode</a></li>
+  </ul>
+</nav>
+
+</header>
+
+<main>
+  <h2>Our Models Collection</h2>
+  <div class="products">
+    <div class="product">
+      <img src="images/Model1.jpg" alt="Model Jenny">
+      <div class="details">
+        <strong>Jenny</strong><br>Leather Bag<br>11 inches wide, Black with golden details<br>Handmade luxury piece
+      </div>
+    </div>
+    <div class="product">
+      <img src="images/Model2.jpg" alt="Model Sophia">
+      <div class="details">
+        <strong>Sophia</strong><br>Crossbody Bag<br>9 inches wide, Beige with silver hardware<br>Premium Italian leather
+      </div>
+    </div>
+    <div class="product">
+      <img src="images/Model3.jpg" alt="Model Mia">
+      <div class="details">
+        <strong>Mia</strong><br>Shoulder Bag<br>13 inches wide, Burgundy shade<br>Hand-stitched elegance
+      </div>
+    </div>
+    <div class="product">
+      <img src="images/Model4.jpg" alt="Model Emma">
+      <div class="details">
+        <strong>Emma</strong><br>Tote Bag<br>15 inches wide, White with rose-gold accents<br>Soft-grain leather, handmade
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>&copy; 2025 Aurora. All rights reserved.</footer>
+
+<script>
+// Image Zoom Modal
+const modal = document.createElement('div');
+modal.id = 'modal';
+modal.style.cssText = "display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);text-align:center;padding-top:60px;";
+modal.innerHTML = '<span id="close" style="position:absolute;top:20px;right:40px;color:#fff;font-size:40px;cursor:pointer;">&times;</span><img id="modal-img" style="max-width:80%;max-height:80%;border-radius:10px;">';
+document.body.appendChild(modal);
+
+document.querySelectorAll('.product img').forEach(img => {
+  img.addEventListener('click', () => {
+    document.getElementById('modal').style.display='block';
+    document.getElementById('modal-img').src=img.src;
+  });
+});
+document.getElementById('close').onclick = () => { document.getElementById('modal').style.display='none'; };
+
+// Fade-in animation
+document.querySelectorAll('.product').forEach((p,i)=>{p.style.opacity=0; setTimeout(()=>{p.style.transition='opacity 0.8s ease-in'; p.style.opacity=1;}, i*100);});
+</script>
+
+</body>
+</html>

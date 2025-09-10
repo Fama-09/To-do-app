@@ -1,0 +1,147 @@
+/* General reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+body {
+  background-color: #111;
+  color: #eee;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 30px 10px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: #f2c9e0;
+}
+
+header .motto {
+  font-size: 1.2rem;
+  color: #bbb;
+  margin-top: 5px;
+}
+
+/* Navigation */
+nav {
+  background: #1c1c1c;
+  padding: 15px 0;
+  margin-bottom: 30px;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+nav ul li {
+  margin: 0 20px;
+}
+
+nav ul li a {
+  color: #eee;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.2s;
+}
+
+nav ul li a:hover {
+  color: #f2c9e0;
+}
+
+/* Product grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  padding: 0 20px 40px;
+}
+
+.card {
+  background: #1c1c1c;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  margin: 15px 0 5px;
+}
+
+.price {
+  color: #f2c9e0;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.add-cart {
+  background: #f2c9e0;
+  border: none;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.add-cart:hover {
+  background: #d9a9c0;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #1c1c1c;
+  font-size: 0.9rem;
+  color: #888;
+}
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.product {
+  background: #fff; /* ensures no black background */
+  border: 1px solid #e6d3c9;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(183, 110, 121, 0.15);
+  text-align: center;
+}
+
+.product img {
+  width: 100%;
+  height: 250px;  /* fixed height for all images */
+  object-fit: cover; /* maintains aspect ratio and fills the box */
+  border-radius: 10px;
+}
+.product h3 {
+  font-size: 1.2rem;
+  margin: 15px 0 5px;
+  color: #333;
+}
